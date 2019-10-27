@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from markdown import markdown
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -15,3 +16,7 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_markdown_text_as_html(self):
+        """MarkDown記法で書かれたtextをHTML形式に変換して返す"""
+        return markdown(self.text)
