@@ -23,10 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h84l@4dw%pl50no3*k&j!@5(wd#t_stgh8p%5)vs^uj1p6pc9o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1', '*.herokuapp.com']
-ALLOWED_HOSTS = ['*']
+DEBUG = False
 
 # Application definition
 
@@ -130,3 +127,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 LOGIN_REDIRECT_URL = '/'
+
+ALLOWED_HOSTS = ['127.0.0.1', '*.herokuapp.com']
+ALLOWED_HOSTS = ['*']
